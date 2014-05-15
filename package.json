@@ -1,0 +1,21 @@
+{
+  "name": "YoutubePlayer",
+  "title": "YoutubePlayer",
+  "version": "0.0.1",
+  "homepage": "",
+  "author": {
+    "name": "La Grange",
+    "email": "info@la-grange.ca"
+  },
+  "devDependencies": {
+    "grunt-contrib-watch": "~0.4.4",
+    "grunt-contrib-requirejs": "~0.4.3",
+    "grunt": "~0.4.4",
+    "rjs-build-analysis": "0.0.3",
+    "grunt-contrib-less": "~0.10.0",
+    "grunt-contrib-concat": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-bowercopy":"latest"
+  },
+  "keywords": []
+}

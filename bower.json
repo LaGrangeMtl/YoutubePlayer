@@ -1,0 +1,17 @@
+{
+  "name": "YoutubePlayer",
+  "version": "0.0.1",
+  "dependencies": {
+	"bootstrap": "~3.0.3",
+	"lagrange":"https://github.com/LaGrangeMtl/grange-framework.git",
+	"history.js": "~1.8.0",
+	"imagesloaded": "~3.1.4",
+    "jquery": "<2",
+    "es5-shim" : "latest",
+	"underscore" : "latest",
+	"modernizr" : "latest",
+	"placeholder.js" : "https://github.com/jamesallardice/Placeholders.js.git"
+  },
+  "private": true
+}
+

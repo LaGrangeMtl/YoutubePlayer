@@ -1,0 +1,290 @@
+
+
+@charset "UTF-8";
+
+
+	@import "common/bootstrap/mixins.less";
+	@import "common/bootstrap/scaffolding.less";
+	@import "common/bootstrap/type.less";
+	@import "common/bootstrap/utilities.less";
+	@import "common/bootstrap/variables.less";
+	@import "common/bootstrap/forms.less";
+	@import "common/bootstrap/tables.less";
+	@import "common/bootstrap/buttons.less";
+
+	@import "common/responsive.less";
+
+.player-ctn {
+	position:relative;
+	display:inline-block;
+	font-size:0;
+
+	.player-controls {
+		width:100%;
+		height:100%;
+		top:0;
+		left:0;
+		font-size: 36px;
+		position:absolute;
+
+		.player-overlay {
+			position:absolute;
+			left:0;
+			top:0;
+			width:100%;
+			height:100%;
+
+			&.paused {
+				background: rgba(0,0,0,0.25);
+			}
+		}
+
+		.player-volume {
+			position:absolute;
+			bottom:14px;
+			left:80px;
+
+			.volume-ctn {
+				@h:80px;
+				@w:24px;
+
+				overflow: hidden;
+				position:absolute;
+				bottom: 24px;
+				left:0;
+				height: @h;
+				width:@w;
+
+				.volume {
+					position:absolute;
+					//bottom:0;
+					bottom:-100px;
+
+					.transition(bottom 300ms ease);
+				}
+
+				.volume-bg, .volume-fill, .volume-hotspot {
+					position:absolute;
+					width:@w / 2;
+					left: @w / 4;
+					bottom: 6px;
+					height: @h - 12px;
+					background: #fff;
+					border:1px solid #000;
+				}
+
+				.volume-fill {
+					background: #ccc;
+				}
+
+				.volume-hotspot {
+					.opacity(0);
+				}
+			}
+
+			&.horizontal {
+
+				.volume-ctn {
+					@h:24px;
+					@w:80px;
+					bottom: -2px;
+					left:28px;
+					height: @h;
+					width: @w;
+
+					.volume {
+						position:absolute;
+						//left:0;
+						left:-@w;
+
+						.transition(bottom 300ms ease);
+					}
+
+					.volume-bg, .volume-fill, .volume-hotspot {
+						position:absolute;
+						width:@w;
+						left:0;
+						bottom: 8px;
+						height: @h - 12px;
+						background: #fff;
+						border:1px solid #000;
+					}
+
+					.volume-fill {
+						background: #ccc;
+					}
+
+					.volume-hotspot {
+						.opacity(0);
+					}
+				}
+			}
+
+			&:hover {
+				.volume-ctn {
+					.volume {
+						bottom:0;
+					}
+				}
+			}
+
+			&.horizontal:hover {
+				.volume-ctn {
+					.volume {
+						left:0;
+					}
+				}
+			}
+
+			.mute {
+				position:absolute;
+				bottom:0;
+				left:0;
+				color:#fff;
+				cursor:pointer;
+				font-size: 24px;
+
+				.fa-volume-up {
+					position:absolute;
+					bottom:0;
+					left:0;
+					.opacity(1);
+				}
+				.fa-volume-off {
+					position:absolute;
+					bottom:0;
+					left:0;
+				}
+
+				&.muted {
+					.fa-volume-up {
+						.opacity(0);
+					}
+				}
+			}
+		}
+
+		.player-mute {
+			position:absolute;
+			bottom:14px;
+			left:40px;
+			color:#fff;
+			cursor:pointer;
+			font-size: 24px;
+
+			.fa-volume-up {
+				position:absolute;
+				bottom:0;
+				left:0;
+				.opacity(1);
+			}
+			.fa-volume-off {
+				position:absolute;
+				bottom:0;
+				left:0;
+			}
+
+			&.muted {
+				.fa-volume-up {
+					.opacity(0);
+				}
+			}
+		}
+
+		.player-playpause {
+			@w: 80px;
+			@h: 80px;
+			width:@w;
+			height:@h;
+			line-height:@h;
+			text-align:center;
+			position:absolute;
+			left:50%;
+			top:50%;
+			margin: (-@h/2) 0 0 (-@w/2);
+			background: #333;
+			z-index: 1000;
+			color: #fff;
+
+			&.pause {
+				.opacity(0);
+				.fa-play {
+					display:none;
+				}
+				.fa-pause {
+					display:inline-block;
+				}
+
+				&:hover {
+					.opacity(1);
+				}
+			}
+
+			&.play {
+				.fa-play {
+					display:inline-block;
+				}
+				.fa-pause {
+					display:none;
+				}
+			}
+		}
+
+		.player-smallplaypause {
+			@w: 30px;
+			@h: 30px;
+			width:@w;
+			height:@h;
+			line-height:@h;
+			text-align:center;
+			position:absolute;
+			left: 0;
+			bottom:0;
+			background: #333;
+			z-index: 1000;
+			color: #fff;
+			font-size: 18px;
+
+			&.paused {
+				.fa-play {
+					display:none;
+				}
+				.fa-pause {
+					display:inline-block;
+				}
+
+				&:hover {
+					.opacity(1);
+				}
+			}
+		}
+
+		.player-progress {
+			@h: 10px;
+			width:100%;
+			height: @h;
+			background: #333;
+			position:absolute;
+			left:0;
+			bottom:0;
+
+			.player-elapsed {
+				height: @h;
+				background: #666;
+			}
+		}
+
+		.player-timeleft {
+			color: #fff;
+			background: #666;
+			.opacity(0.6);
+			font-size: 18px;
+			line-height: 18px;
+			padding: 8px;
+			display:inline-block;
+			position:absolute;
+			top:0;
+			left:0;
+		}
+	}
+}

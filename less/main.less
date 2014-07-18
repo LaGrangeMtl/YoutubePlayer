@@ -245,16 +245,19 @@
 			color: #fff;
 			font-size: 18px;
 
+			.fa-play {
+				display:none;
+			}
+			.fa-pause {
+				display:inline-block;
+			}
+
 			&.paused {
 				.fa-play {
-					display:none;
-				}
-				.fa-pause {
 					display:inline-block;
 				}
-
-				&:hover {
-					.opacity(1);
+				.fa-pause {
+					display:none;
 				}
 			}
 		}

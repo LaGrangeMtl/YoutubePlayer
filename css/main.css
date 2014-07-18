@@ -1630,15 +1630,17 @@ input[type="button"].btn-block {
   color: #fff;
   font-size: 18px;
 }
-.player-ctn .player-controls .player-smallplaypause.paused .fa-play {
+.player-ctn .player-controls .player-smallplaypause .fa-play {
   display: none;
 }
-.player-ctn .player-controls .player-smallplaypause.paused .fa-pause {
+.player-ctn .player-controls .player-smallplaypause .fa-pause {
   display: inline-block;
 }
-.player-ctn .player-controls .player-smallplaypause.paused:hover {
-  opacity: 1;
-  filter: alpha(opacity=100);
+.player-ctn .player-controls .player-smallplaypause.paused .fa-play {
+  display: inline-block;
+}
+.player-ctn .player-controls .player-smallplaypause.paused .fa-pause {
+  display: none;
 }
 .player-ctn .player-controls .player-progress {
   width: 100%;
